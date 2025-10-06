@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vishal T— Cybersecurity Portfolio</title>
+  <meta name="description" content="Creative cybersecurity portfolio with animated profile, projects, and professional knowledge." />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg:#071028; 
+      --card:#0b1220; 
+      --muted:#98a0b3; 
+      --accent:#06b6d4; 
+      --accent-2:#7c3aed; 
+      --rounded:16px; 
+      font-family: Poppins, Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+    }
+
+    *{box-sizing:border-box}
+    html,body{
+      height:100%;
+      margin:0;
+      background:radial-gradient(1200px 600px at 10% 10%, rgba(6,182,212,0.06), transparent),
+                 radial-gradient(900px 400px at 90% 90%, rgba(124,58,237,0.04), transparent),
+                 linear-gradient(180deg,var(--bg),#021021);
+      color:#e6eef6;
+    }
+    a{color:var(--accent)}
+
+    .container{max-width:1100px;margin:28px auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:62px;height:62px;border-radius:14px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:grid;place-items:center;font-weight:800;color:#021;letter-spacing:0.6px}
+    nav{display:flex;gap:14px;align-items:center}
+    .btn{background:transparent;padding:8px 12px;border-radius:10px;
+      border:1px solid rgba(255,255,255,0.03);cursor:pointer;font-weight:600}
+    .primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));border:none;
+      padding:10px 14px;border-radius:12px;color:#022;cursor:pointer;font-weight:700}
+
+    /* hero */
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:start;margin-bottom:22px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);
+      padding:20px;border-radius:var(--rounded);box-shadow:0 8px 28px rgba(2,6,23,0.6);
+      border:1px solid rgba(255,255,255,0.03); transition: box-shadow 0.3s ease, border 0.3s ease;}
+
+    /* Glow effect on hover */
+    @keyframes glowPulse {
+      0% { box-shadow: 0 0 10px 2px rgba(6,182,212,0.6), 0 0 20px 4px rgba(124,58,237,0.4); }
+      50% { box-shadow: 0 0 20px 4px rgba(6,182,212,0.8), 0 0 40px 8px rgba(124,58,237,0.6); }
+      100% { box-shadow: 0 0 10px 2px rgba(6,182,212,0.6), 0 0 20px 4px rgba(124,58,237,0.4); }
+    }
+    .card:hover {
+      border: 2px solid var(--accent);
+      animation: glowPulse 1.2s infinite;
+    }
+
+    .intro h1{margin:0 0 6px 0;font-size:30px}
+    .intro p{margin:0;color:var(--muted);line-height:1.5}
+    .badges{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
+    .badge{background:linear-gradient(90deg,rgba(255,255,255,0.02),transparent);
+      padding:8px 10px;border-radius:999px;font-size:13px;color:var(--muted);
+      border:1px solid rgba(255,255,255,0.02)}
+
+    /* Avatar Lock Animation */
+    .avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.4s ease;
+    }
+    .avatar img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%) blur(2px);
+      transition: filter 0.5s ease;
+    }
+    .avatar.locked {
+      border: 3px solid #8b1e1e;
+      box-shadow: 0 0 15px rgba(117, 15, 15, 0.6);
+    }
+    .avatar.locked::before {
+      content: "🔒";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2.5rem;
+      color: #7e0707;
+      text-shadow: 0 0 8px #890b0b;
+      animation: blink 1s infinite;
+    }
+    .avatar.unlocking {
+      box-shadow: 0 0 15px rgba(47, 182, 23, 0.6);
+      animation: glitch 0.8s linear;
+      border: 4px solid #0fa42a;
+      color: #0d7c1a;
+      text-shadow: 0 0 8px #13af16;
+    }
+    .avatar.unlocked img {
+      box-shadow: 0 0 15px rgba(47, 182, 23, 0.6);
+      filter: grayscale(0) blur(0);
+      border: 4px solid #0fa42a;
+      color: #0d7c1a;
+      text-shadow: 0 0 8px #13af16;
+    }
+
+    @keyframes blink {50% { opacity: 0; }}
+    @keyframes glitch {
+      0% { transform: translate(0,0) }
+      20% { transform: translate(-5px,2px) }
+      40% { transform: translate(5px,-2px) }
+      60% { transform: translate(-3px,3px) }
+      80% { transform: translate(3px,-3px) }
+      100% { transform: translate(0,0) }
+    }
+
+    .profile-wrap{display:grid;grid-template-columns:150px 1fr;gap:14px;align-items:center}
+    .profile-meta h2{margin:0;font-size:18px}
+    .profile-meta p{margin:6px 0 0 0;color:var(--muted);font-size:14px}
+    .skills-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .skill-pill{background:linear-gradient(90deg,rgba(255,255,255,0.02),transparent);
+      padding:8px 10px;border-radius:10px;font-size:13px;color:var(--muted);
+      border:1px solid rgba(255,255,255,0.02)}
+
+    /* projects */
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .project{display:flex;gap:12px;align-items:flex-start;padding:14px;border-radius:12px;
+      transition:transform .18s ease, box-shadow .18s ease}
+    .project:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(2,6,23,0.6)}
+    .project img{width:92px;height:64px;border-radius:8px;object-fit:cover}
+
+    /* timeline */
+    .timeline{border-left:2px dashed rgba(255,255,255,0.03);padding-left:18px}
+    .time-item{margin-bottom:14px}
+    .time-item h4{margin:0 0 4px 0}
+    .time-item p{margin:0;color:var(--muted);font-size:14px}
+
+    /* contact */
+    form{display:grid;gap:10px}
+    input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.04);
+      padding:10px;border-radius:10px;color:inherit}
+
+    footer{margin-top:26px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* responsive */
+    @media (max-width:920px){
+      .hero{grid-template-columns:1fr}
+      .projects{grid-template-columns:1fr}
+      .profile-wrap{grid-template-columns:120px 1fr}
+      .avatar{width:120px;height:120px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">VT</div>
+        <div>
+          <div style="font-weight:700">Vishal T</div>
+          <div style="color:var(--muted);font-size:13px">
+            Cybersecurity • Penetration Testing • Digital Forensics
+          </div>
+        </div>
+      </div>
+      <nav>
+        <a class="btn" href="#projects">Projects</a>
+        <a class="btn" href="#knowledge">Knowledge</a>
+        <a class="btn" href="#contact">Contact</a>
+        <button class="primary" id="downloadResume">Resume</button>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="card intro profile-card">
+        <div class="profile-wrap">
+          <!-- Avatar Unlock -->
+          <div id="avatarBox" class="avatar locked">
+            <img src="VT.jpg" alt="Vishal T" />
+          </div>
+
+          <div class="profile-meta">
+            <h2>Hi, I'm Vishal — Cybersecurity Enthusiast</h2>
+            <p>3rd-semester Cybersecurity student at Mahendra Engineering College. 
+               I focus on web app security, digital forensics, and automation for quick recon and reporting.</p>
+            <div class="skills-grid">
+              <div class="skill-pill">Kali Linux</div>
+              <div class="skill-pill">Web Pentesting</div>
+              <div class="skill-pill">Digital Forensics</div>
+              <div class="skill-pill">Python / Bash</div>
+              <div class="skill-pill">Nmap • Burp • Wireshark</div>
+            </div>
+            <div style="margin-top:12px;display:flex;gap:10px">
+              <a class="primary" href="#contact">Hire Me</a>
+              <a class="btn" href="#projects">Projects</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card" style="min-height:220px">
+        <h3 style="margin-top:0">Quick Links</h3>
+        <p style="color:var(--muted)"> contect me with these Links GitHub, LinkedIn, and CTF profiles.</p>
+        <div style="display:flex;gap:8px;margin-top:10px">
+          <a class="btn" href="https://github.com/VTDevilDragon1002">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/vishal-vishal-8b2863377/">LinkedIn</a>
+          <a class="btn" href="https://tryhackme.com/p/vishaldcp614">Try Hack Me</a>
+        </div>
+        <div style="margin-top:18px">
+          <h4 style="margin:0">Certifications</h4>
+          <p style="margin:6px 0 0 0;color:var(--muted)">
+           Ongoing — Linux & Networking workshops — Cyber related courses
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Knowledge -->
+    <section class="card" id="knowledge" style="margin-bottom:14px">
+      <h3 style="margin:0 0 8px 0">Cybersecurity Knowledge & Case Studies</h3>
+      <div class="timeline">
+        <div class="time-item">
+          <h4>Kali Tips</h4>
+          <p>Cheat-sheets and quick reference for penetration testing tools.</p>
+        </div>
+        <div class="time-item">
+          <h4>Aptitude knowledge</h4>
+          <p>Aptitude knowledge with cyber security feild</p>
+        </div>
+        <div class="time-item">
+          <h4>Automation & Tooling</h4>
+          <p>Automated recon scripts (Python) for Nmap parsing, screenshotting, 
+             and report generation used in labs.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="card" id="projects" style="margin-bottom:12px">
+      <h3 style="margin:0 0 12px 0">Projects & Demos</h3>
+      <div class="projects">
+        <article class="project">
+          <img alt="Web CTF" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect width='100%25' height='100%25' fill='%23051125'/%3E%3Ctext x='20' y='40' fill='%2306b6d4'%3EWeb CTF Lab%3C/text%3E%3C/svg%3E" />
+          <div>
+            <h4 style="margin:0">DNC ROX Show</h4>
+            <p style="margin:6px 0 0 0;color:var(--muted)">It is a ticket booking application </p>
+          </div>
+        </article>
+        <article class="project">
+          <img alt="Forensics" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect width='100%25' height='100%25' fill='%2303121b'/%3E%3Ctext x='20' y='40' fill='%2306b6d4'%3EForensics Kit%3C/text%3E%3C/svg%3E" />
+          <div>
+            <h4 style="margin:0">Forensics Toolkit</h4>
+            <p style="margin:6px 0 0 0;color:var(--muted)">Scripts for image analysis, timelines, and deleted file recovery with example outputs.</p>
+          </div>
+        </article>
+        <article class="project">
+          <img alt="Automation" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect width='100%25' height='100%25' fill='%23051125'/%3E%3Ctext x='20' y='40' fill='%2306b6d4'%3EAutomation%3C/text%3E%3C/svg%3E" />
+          <div>
+            <h4 style="margin:0">Automation Scripts</h4>
+            <p style="margin:6px 0 0 0;color:var(--muted)">Recon parsers and reporting scripts to speed up lab workflows.</p>
+          </div>
+        </article>
+        <article class="project">
+          <img alt="Kali Tips" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect width='100%25' height='100%25' fill='%2303121b'/%3E%3Ctext x='20' y='40' fill='%2306b6d4'%3EKali Tips%3C/text%3E%3C/svg%3E" />
+          <div>
+            <h4 style="margin:0">Kali Tips</h4>
+            <p style="margin:6px 0 0 0;color:var(--muted)">Cheat-sheets and quick reference for penetration testing tools.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="card" id="contact">
+      <h3 style="margin:0 0 12px 0">Contact Me</h3>
+      <form>
+        <input type="text" placeholder="Your name" />
+        <input type="email" placeholder="Email address" />
+        <textarea rows="3" placeholder="Message"></textarea>
+        <button class="primary" type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <footer>
+      &copy; 2025 Vishal T • Designed for cybersecurity portfolio
+    </footer>
+  </div>
+
+  <!-- Audio Effects -->
+  <audio id="scanSound" loop preload="auto" src="https://assets.mixkit.co/active_storage/sfx/2010/2010-preview.mp3"></audio>
+  <audio id="glitchSound" preload="auto" src="https://assets.mixkit.co/active_storage/sfx/2021/2021-preview.mp3"></audio>
+  <audio id="chimeSound" preload="auto" src="https://assets.mixkit.co/active_storage/sfx/1700/1700-preview.mp3"></audio>
+
+  <script>
+    const avatar = document.getElementById("avatarBox");
+    const scanSound = document.getElementById("scanSound");
+    const glitchSound = document.getElementById("glitchSound");
+    const chimeSound = document.getElementById("chimeSound");
+
+    // Play scanning sound while locked
+    window.addEventListener("load", () => {
+      if (avatar.classList.contains("locked")) {
+        scanSound.volume = 0.4;
+        scanSound.play().catch(() => {});
+      }
+    });
+
+    avatar.addEventListener("click", () => {
+      if (avatar.classList.contains("locked")) {
+        scanSound.pause();
+        scanSound.currentTime = 0;
+
+        glitchSound.volume = 0.6;
+        glitchSound.play();
+
+        avatar.classList.remove("locked");
+        avatar.classList.add("unlocking");
+
+        setTimeout(() => {
+          avatar.classList.remove("unlocking");
+          avatar.classList.add("unlocked");
+
+          
+        }, 1000);
+      }
+    });
+
+    // Resume button
+    document.getElementById("downloadResume").addEventListener("click", () => {
+      alert("Your Resume download will be integrated soon.");
+    });
+  </script>
+</body>
+</html>
