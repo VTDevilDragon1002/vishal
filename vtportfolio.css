@@ -1545,6 +1545,80 @@ body {
   }
 
 }
+/* =========================================
+   FINAL MOBILE FIX — VT PORTFOLIO
+   ========================================= */
+
+@media (max-width: 768px) {
+
+  /* GLOBAL SAFETY */
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* ---------------------------------
+     1️⃣ PROFILE IMAGE DOWN FIX
+     --------------------------------- */
+  .profile-photo {
+    margin-top: 90px;        /* pushes image below navbar */
+    width: 200px;
+    height: 200px;
+  }
+
+  /* ---------------------------------
+     2️⃣ ESTABLISH CONNECTION TEXT FIX
+     --------------------------------- */
+  .contact-container,
+  .contact-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px 16px;
+    box-sizing: border-box;
+  }
+
+  .contact-container h2,
+  .contact-container p {
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* ---------------------------------
+     3️⃣ PROJECT SECTION — 60% SCALE
+     --------------------------------- */
+  .projects-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-card {
+    width: 60%;
+    margin: 16px auto;
+  }
+
+  .project-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* ---------------------------------
+     4️⃣ SUBMIT BUTTON FIX
+     --------------------------------- */
+  .contact-container button,
+  .submit-btn {
+    width: 100%;
+    max-width: 100%;
+  }
+
+}
+
 
 
 
