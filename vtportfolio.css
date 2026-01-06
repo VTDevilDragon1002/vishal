@@ -1570,28 +1570,8 @@ body {
     width: 200px;
     height: 200px;
   }
+  @media (max-width: 768px) {
 
-  /* ---------------------------------
-     2️⃣ ESTABLISH CONNECTION TEXT FIX
-     --------------------------------- */
-  .contact-container,
-  .contact-content {
-    width: 100%;
-    max-width: 100%;
-    padding: 20px 16px;
-    box-sizing: border-box;
-  }
-
-  .contact-container h2,
-  .contact-container p {
-    width: 100%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-
-  /* ---------------------------------
-     3️⃣ PROJECT SECTION — 60% SCALE
-     --------------------------------- */
   .projects-container {
     display: flex;
     flex-direction: column;
@@ -1600,24 +1580,54 @@ body {
 
   .project-card {
     width: 60%;
+    max-width: 260px;
+    padding: 12px;
     margin: 16px auto;
   }
 
   .project-card img {
     width: 100%;
     height: auto;
-  }
-
-  /* ---------------------------------
-     4️⃣ SUBMIT BUTTON FIX
-     --------------------------------- */
-  .contact-container button,
-  .submit-btn {
-    width: 100%;
-    max-width: 100%;
+    border-radius: 12px;
   }
 
 }
+
+@media (max-width: 768px) {
+
+  /* CONTACT SECTION FIX */
+  .contact-section,
+  .contact-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 24px 16px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .contact-container h2 {
+    font-size: 1.8rem;
+    text-align: left;
+    width: 100%;
+  }
+
+  .contact-container p {
+    width: 100%;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  /* SUBMIT BUTTON PERFECT FIX */
+  .contact-container button,
+  .submit-btn {
+    width: 100%;
+    padding: 14px 0;
+    margin-top: 16px;
+    box-sizing: border-box;
+  }
+}
+
 
 
 
