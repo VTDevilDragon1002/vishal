@@ -1432,3 +1432,20 @@
 }
 
 
+/* =========================
+   MOBILE RESPONSIVE FIXES
+   ========================= */
+
+@media (max-width: 768px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  section {
+    padding: 60px 16px;
+  }
+
+}
+
+
