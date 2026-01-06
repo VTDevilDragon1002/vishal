@@ -1627,6 +1627,56 @@ body {
     box-sizing: border-box;
   }
 }
+/* ======================================
+   CONTACT + SUBMIT BUTTON MOBILE FIX
+   ====================================== */
+
+@media (max-width: 768px) {
+
+  /* SECTION HEIGHT FIX */
+  #contact,
+  .contact-section {
+    min-height: auto !important;
+    height: auto !important;
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+
+  /* CONTAINER ALIGNMENT FIX */
+  .contact-wrapper,
+  .contact-container {
+    display: block !important;
+    align-items: unset !important;
+    justify-content: unset !important;
+  }
+
+  /* FORM CARD FIX */
+  .contact-form {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 20px;
+    padding: 20px 16px;
+    box-sizing: border-box;
+  }
+
+  /* INPUTS FIX */
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* ✅ SUBMIT BUTTON PERFECT FIX */
+  .submit-btn {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 16px;
+    padding: 14px 0;
+    display: block;
+  }
+
+}
+
 
 
 
