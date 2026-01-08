@@ -1,3 +1,8 @@
+html, body {
+    overflow-x: hidden !important;
+    margin: 0;
+    padding: 0;
+}
 html {
   width: 100%;
   overflow-x: hidden;
@@ -1621,3 +1626,8 @@ body {
     font-size: 0.85rem;
   }
 }
+* {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
