@@ -108,6 +108,11 @@ body {
      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
      background: linear-gradient(45deg, rgba(255, 105, 180, 0.1), transparent);
 }
+@keyframes floatShape {
+    from { transform: translateY(100vh) rotate(0deg); }
+    to   { transform: translateY(-100px) rotate(360deg); }
+}
+
  @keyframes floatShape {
      from {
          transform: translateY(100vh) rotate(0deg);
@@ -123,6 +128,8 @@ body {
 }
 /* Neural network lines */
  .neural-lines {
+	 width: 100%;
+background: linear-gradient(90deg, transparent, #e0a3ff, transparent);
      position: fixed;
      top: 0;
      left: 0;
@@ -131,6 +138,8 @@ body {
      z-index: -1;
 }
  .neural-line {
+	 width: 100%;
+background: linear-gradient(90deg, transparent, #e0a3ff, transparent);
      position: absolute;
      background: linear-gradient(90deg, transparent, #00ffff, transparent);
      height: 1px;
@@ -415,6 +424,22 @@ body {
          opacity: 1;
     }
 }
+.hero::before {
+    clip-path: inset(0 0 0 0);
+    overflow: hidden;
+}
+
+.neural-lines, .neural-line {
+    overflow: hidden;
+    clip-path: inset(0 0 0 0);
+    max-width: 100%;
+}
+
+.geometric-shapes, .shape {
+    overflow: hidden;
+    clip-path: inset(0 0 0 0);
+}
+
  .hero-content {
      max-width: 1000px;
      padding: 80px 40px;
@@ -1637,7 +1662,12 @@ body {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
 }
+*, *::before, *::after {
+    max-width: 100%;
+}
+
 
 html, body {
     overflow-x: hidden !important;
 		}
+
