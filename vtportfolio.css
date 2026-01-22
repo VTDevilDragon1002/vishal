@@ -1670,4 +1670,22 @@ background: linear-gradient(90deg, transparent, #e0a3ff, transparent);
 html, body {
     overflow-x: hidden !important;
 		}
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden !important;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+*:not(path):not(svg) {
+    max-width: 100% !important;
+}
+
+body > * {
+    overflow-x: hidden !important;
+}
+
 
