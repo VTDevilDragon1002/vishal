@@ -1,22 +1,5 @@
-html, body {
-    overflow-x: hidden !important;
-    margin: 0;
-    padding: 0;
-}
-html {
-  width: 100%;
-  overflow-x: hidden;
-}
-
-body {
-  width: 100%;
-  overflow-x: hidden;
-  touch-action: manipulation;
-}
-
-
 @charset "utf-8";
-/* CSS Document */
+/* CSS Document */ 
  * {
      margin: 0;
      padding: 0;
@@ -1445,10 +1428,9 @@ body {
         box-shadow: 0 0 45px rgba(255, 105, 180, 0.8);
     }
 }
-/* =========================================
-   MERGED & CLEANED MOBILE CSS (≤ 768px)
-   ========================================= */
-
+/* ==============================
+   MOBILE MEDIA QUERY (≤ 768px)
+   ============================== */
 @media (max-width: 768px) {
 
   /* GLOBAL */
@@ -1459,6 +1441,25 @@ body {
 
   section {
     padding: 60px 16px;
+  }
+
+  /* HERO */
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    min-height: 100svh;
+    height: auto;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    padding: 40px 16px;
+    margin-top: 80px;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
 
   h1 {
@@ -1483,33 +1484,14 @@ body {
     height: 100vh;
   }
 
-  /* HERO SECTION */
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    min-height: 100svh;
-    height: auto;
-  }
-
-  .hero-content {
-    max-width: 100%;
-    padding: 40px 16px;
-    margin-top: 80px;
-  }
-
-  .hero-description {
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-
-  /* Disable fancy shapes */
+  /* SHAPES */
   .shape,
   .neural-line,
   .geometric-shapes {
     display: none !important;
   }
 
-  /* PROFILE PHOTO FIX */
+  /* PROFILE PHOTO */
   .profile-photo {
     margin-top: 90px;
     margin-bottom: 24px;
@@ -1519,7 +1501,7 @@ body {
     transform: none;
   }
 
-  /* HEXAGON SERVICES */
+  /* HEXAGON SECTION */
   .hexagon {
     width: 280px;
     height: 320px;
@@ -1550,7 +1532,7 @@ body {
     gap: 20px;
   }
 
-  /* PROJECT CARDS */
+  /* PROJECTS */
   .projects-container {
     display: flex;
     flex-direction: column;
@@ -1625,8 +1607,5 @@ body {
   .footer-links a {
     font-size: 0.85rem;
   }
-}
-* {
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
+
 }
