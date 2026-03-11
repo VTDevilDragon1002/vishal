@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dragon Cyber Vault</title>
+
+<style>
+
+body{
+background:#000;
+color:#00ff9f;
+font-family:Courier New, monospace;
+text-align:center;
+overflow:hidden;
+}
+
+/* MATRIX CANVAS */
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
+
+/* TITLE */
+
+h1{
+font-size:45px;
+letter-spacing:3px;
+text-shadow:0 0 10px #00ff9f,0 0 30px #00ff9f;
+animation:glitch 1.5s infinite;
+}
+
+@keyframes glitch{
+0%{text-shadow:2px 0 red,-2px 0 cyan;}
+20%{text-shadow:-2px 0 red,2px 0 cyan;}
+40%{text-shadow:2px 0 red,-2px 0 cyan;}
+60%{text-shadow:-2px 0 red,2px 0 cyan;}
+100%{text-shadow:0 0 20px #00ff9f;}
+}
+
+/* TERMINAL BOX */
+
+.container{
+margin-top:120px;
+background:rgba(0,0,0,0.7);
+border:1px solid #00ff9f;
+width:500px;
+margin-left:auto;
+margin-right:auto;
+padding:40px;
+box-shadow:0 0 20px #00ff9f;
+}
+
+/* INPUT */
+
+input{
+background:black;
+border:1px solid #00ff9f;
+color:#00ff9f;
+padding:10px;
+margin:10px;
+font-size:18px;
+width:200px;
+}
+
+/* BUTTON */
+
+button{
+background:#00ff9f;
+border:none;
+padding:10px 30px;
+font-size:18px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#00ffaa;
+transform:scale(1.1);
+box-shadow:0 0 15px #00ff9f;
+}
+
+/* FLAG */
+
+#flag{
+display:none;
+font-size:30px;
+margin-top:40px;
+color:#00ff9f;
+animation:type 4s steps(40,end);
+overflow:hidden;
+white-space:nowrap;
+border-right:3px solid #00ff9f;
+}
+
+@keyframes type{
+from{width:0}
+to{width:100%}
+}
+
+/* SCAN LINE */
+
+.scan{
+position:fixed;
+width:100%;
+height:3px;
+background:#00ff9f;
+animation:scan 4s infinite;
+}
+
+@keyframes scan{
+0%{top:0}
+50%{top:100%}
+100%{top:0}
+}
+
+.error{
+color:red;
+}
+
+.success{
+color:#00ff9f;
+}
+
+</style>
+</head>
+
+<body>
+
+<canvas id="matrix"></canvas>
+
+<div class="scan"></div>
+
+<h1>DRAGON CYBER VAULT</h1>
+
+<div class="container">
+
+<p>> Security verification required</p>
+
+<p>Question 1</p>
+<p>> When did Mahendra Engineering College start?</p>
+<input id="q1">
+
+<p>Question 2</p>
+<p>> When did Cyber Security department start at Mahendra Engineering College?</p>
+<input id="q2">
+
+<br><br>
+
+<button onclick="check()">Verify Access</button>
+
+<p id="msg"></p>
+
+<div id="flag">
+BREACH{ITS_DRAGON_HOME}
+</div>
+
+</div>
+
+<script>
+
+/* MATRIX EFFECT */
+
+var canvas=document.getElementById("matrix");
+var ctx=canvas.getContext("2d");
+
+canvas.height=window.innerHeight;
+canvas.width=window.innerWidth;
+
+var letters="01";
+letters=letters.split("");
+
+var fontSize=14;
+var columns=canvas.width/fontSize;
+
+var drops=[];
+for(var x=0;x<columns;x++)
+drops[x]=1;
+
+function draw(){
+
+ctx.fillStyle="rgba(0,0,0,0.05)";
+ctx.fillRect(0,0,canvas.width,canvas.height);
+
+ctx.fillStyle="#00ff9f";
+ctx.font=fontSize+"px monospace";
+
+for(var i=0;i<drops.length;i++){
+
+var text=letters[Math.floor(Math.random()*letters.length)];
+
+ctx.fillText(text,i*fontSize,drops[i]*fontSize);
+
+if(drops[i]*fontSize>canvas.height && Math.random()>0.975)
+drops[i]=0;
+
+drops[i]++;
+
+}
+
+}
+
+setInterval(draw,33);
+
+
+/* FLAG CHECK */
+
+function check(){
+
+var a=document.getElementById("q1").value;
+var b=document.getElementById("q2").value;
+
+if(a=="1995" && b=="2020")
+{
+
+document.getElementById("msg").innerHTML="> ACCESS GRANTED";
+document.getElementById("msg").className="success";
+document.getElementById("flag").style.display="block";
+
+}
+else
+{
+
+document.getElementById("msg").innerHTML="> ACCESS DENIED";
+document.getElementById("msg").className="error";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
