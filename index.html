@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VT Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="vtportfolio.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Neural Background -->
+    <div class="neural-background"></div>
+
+    <!-- Floating Geometric Shapes -->
+    <div class="geometric-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <!-- Neural Network Lines -->
+    <div class="neural-lines">
+        <div class="neural-line"></div>
+        <div class="neural-line"></div>
+        <div class="neural-line"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="glass">
+        <nav>
+            <a href="#home" class="logo">
+                <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#e0a3ff"/>
+                            <stop offset="50%" style="stop-color:#ff69b4"/>
+                            <stop offset="100%" style="stop-color:#9370db"/>
+                        </linearGradient>
+                    </defs>
+                    <circle cx="50" cy="30" r="8" fill="url(#logoGradient)" opacity="0.8">
+                        <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="30" cy="60" r="6" fill="url(#logoGradient)" opacity="0.6">
+                        <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="70" cy="65" r="7" fill="url(#logoGradient)" opacity="0.7">
+                        <animate attributeName="opacity" values="0.7;1;0.7" dur="1.8s" repeatCount="indefinite"/>
+                    </circle>
+                    <line x1="50" y1="30" x2="30" y2="60" stroke="url(#logoGradient)" stroke-width="2" opacity="0.6">
+                        <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+                    </line>
+                    <line x1="50" y1="30" x2="70" y2="65" stroke="url(#logoGradient)" stroke-width="2" opacity="0.6">
+                        <animate attributeName="opacity" values="0.6;1;0.6" dur="2.2s" repeatCount="indefinite"/>
+                    </line>
+                    <line x1="30" y1="60" x2="70" y2="65" stroke="url(#logoGradient)" stroke-width="2" opacity="0.6">
+                        <animate attributeName="opacity" values="0.6;1;0.6" dur="2.8s" repeatCount="indefinite"/>
+                    </line>
+                </svg>
+                VISHAL T
+            </a>
+            <ul class="nav-links">
+                <li><a href="#showcase">Achievements</a></li>
+                <li><a href="#ctf-writeups">CTF Write-Ups</a></li>
+                <li><a href="#features">Projects</a></li>
+                <li><a href="#timeline">Evolution</a></li>
+                <li><a href="#contact">Connect</a></li>
+            </ul>
+            <div class="mobile-menu-toggle">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </div>
+        </nav>
+        <div class="mobile-nav">
+            <a href="#showcase">Achievements</a>
+            <a href="#ctf-writeups">CTF Write-Ups</a>
+            <a href="#features">Projects</a>
+            <a href="#timeline">Evolution</a>
+            <a href="#contact">Connect</a>
+        </div>
+    </header>
+
+    <!-- Section 1: Hero -->
+    <section class="hero" id="home">
+        <div class="profile-photo glass">
+            <img src="vtddphoto.jpg" alt="Vishal T Profile Photo">
+        </div>
+        <div class="hero-content">
+            <div class="hero-subtitle">Welcome to</div>
+            <h1>ETHICAL DR4G0N</h1>
+            <div class="hero-description">
+                <p>Cybersecurity Student / Continuous Learner<br>
+                CTF Player / Practical Security Labs<br>
+                Linux Fundamentals (Kali Linux) / Command-Line Skills<br>
+                Networking &amp; Security Fundamentals / Protocol Awareness<br>
+                SOC &amp; Blue-Team Basics (Learning) / Threat Analysis (Learning).</p>
+            </div>
+            <!-- Social Links under hero text -->
+            <div class="social-links">
+                <a href="https://www.instagram.com/vt_ethical_dragon/" target="_blank" class="glass" title="Instagram">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="2" width="20" height="20" rx="5"/>
+                        <circle cx="12" cy="12" r="4"/>
+                        <circle cx="17.5" cy="6.5" r="0.5"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/VTDevilDragon1002" target="_blank" class="glass" title="GitHub">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.2.8-.5v-1.8c-3.3.7-4-1.6-4-1.6-.5-1.2-1.3-1.6-1.3-1.6-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.4 1.2-3.3-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.9 1.2 2 1.2 3.3 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5A12 12 0 0 0 12 .5z"/>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/vishal-t-8b2863377/" target="_blank" class="glass" title="LinkedIn">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M4.98 3.5A2.48 2.48 0 1 0 5 8.46a2.48 2.48 0 0 0-.02-4.96zM3 21h4V9H3zm7 0h4v-6c0-1.6.3-3.1 2.3-3.1 2 0 2 1.9 2 3.2V21h4v-6.7c0-4.1-2.2-6-5.2-6-2.4 0-3.5 1.3-4 2.2V9h-4z"/>
+                    </svg>
+                </a>
+                <a href="https://www.facebook.com/VTDevilDragon/" target="_blank" class="glass" title="Facebook">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M22 12a10 10 0 1 0-11.6 9.9v-7H8v-3h2.4V9.5c0-2.4 1.4-3.7 3.6-3.7 1 0 2 .2 2 .2v2.2h-1.1c-1.1 0-1.4.7-1.4 1.4V12H16l-.4 3h-2.1v7A10 10 0 0 0 22 12z"/>
+                    </svg>
+                </a>
+                <a href="https://tryhackme.com/p/vishaldcp614" target="_blank" class="glass" title="TryHackMe">
+                    <img src="https://assets.tryhackme.com/img/favicon.png" alt="TryHackMe" width="22" height="22" class="blue-icon">
+                </a>
+                <a href="https://app.hackthebox.com/profile/your_id" target="_blank" class="glass" title="Hack The Box">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3 7l9-5 9 5v10l-9 5-9-5V7zm9-2.3L5 8l7 3.9L19 8l-7-3.3zM5 9.8v6.4l6 3.3v-6.4L5 9.8zm14 0l-6 3.3v6.4l6-3.3V9.8z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Achievements (with See All modal) -->
+    <section class="showcase" id="showcase">
+        <h2 class="section-title">ACHIEVEMENTS</h2>
+        <div class="certificate-container">
+            <div class="certificate-card">
+                <div class="certificate-inner glass">
+                    <div class="image-container">
+                        <img src="nptlcloud.jpeg" alt="Cyber Security">
+                    </div>
+                    <h4>NPTEL</h4>
+                    <p>Cloud Computing</p>
+                </div>
+            </div>
+            <div class="certificate-card">
+                <div class="certificate-inner glass">
+                    <div class="image-container">
+                        <img src="E-J.jpg" alt="Cyber security CTF">
+                    </div>
+                    <h4>GTE Certification</h4>
+                    <p>First class with distinction</p>
+                </div>
+            </div>
+            <div class="certificate-card">
+                <div class="certificate-inner glass">
+                    <div class="image-container">
+                        <img src="kiotCTF-2.jpg" alt="Cyber security CTF">
+                    </div>
+                    <h4>2nd Place</h4>
+                    <p>Knowledge Institute Of Technology (Individual)</p>
+                </div>
+            </div>
+            <div class="certificate-card">
+                <div class="certificate-inner glass">
+                    <div class="image-container">
+                        <img src="sanmugaCTF-2.png" alt="Cyber security CTF">
+                    </div>
+                    <h4>2nd Place</h4>
+                    <p>Sri Shanmugha College of Engineering (Individual)</p>
+                </div>
+            </div>
+            <div class="certificate-card">
+                <div class="certificate-inner glass">
+                    <div class="image-container">
+                        <img src="sonaCTF-3.jpg" alt="Cyber security CTF">
+                    </div>
+                    <h4>3rd Place</h4>
+                    <p>Sona College of Technology and Engineering (Team)</p>
+                </div>
+            </div>
+            <div class="certificate-card">
+                <div class="certificate-inner glass">
+                    <div class="image-container">
+                        <img src="elevateINTERN.jpeg" alt="Cyber Security">
+                    </div>
+                    <h4>Elevate Labs</h4>
+                    <p>Cybersecurity Internship</p>
+                </div>
+            </div>
+        </div>
+        <!-- See All Button -->
+        <div class="see-all-wrapper">
+            <button class="see-all-btn" onclick="openCertModal('achievements')">
+                <span>See All</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+        </div>
+    </section>
+
+    <!-- Certificates Modal Overlay -->
+    <div class="cert-modal-overlay" id="certModal" onclick="closeCertModal(event)">
+        <div class="cert-modal-box">
+            <button class="cert-modal-close" onclick="closeCertModal(null)">&#x2715;</button>
+            <!-- Tab Buttons -->
+            <div class="cert-modal-tabs">
+                <button class="cert-tab-btn active" id="tab-achievements" onclick="switchTab('achievements')">🏆 Achievements</button>
+                <button class="cert-tab-btn" id="tab-certificates" onclick="switchTab('certificates')">📜 Certificates</button>
+                <button class="cert-tab-btn" id="tab-participated" onclick="switchTab('participated')">🎖️ Participated</button>
+            </div>
+            <!-- Tab: Achievements -->
+            <div class="cert-tab-content active" id="content-achievements">
+                <div class="modal-card-grid">
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="nptlcloud.jpeg" alt="AIG"></div><h4>AIG (Forage)</h4></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="E-J.jpg" alt="GTE"></div><h4>GTE Certification</h4></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="kiotCTF-2.jpg" alt="KIOT CTF"></div><h4>2nd Place</h4></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="sanmugaCTF-2.png" alt="Sanmuga CTF"></div><h4>2nd Place</h4></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="sonaCTF-3.jpg" alt="Sona CTF"></div><h4>3rd Place</h4></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="elevateINTERN.jpeg" alt="Elevate"></div><h4>Elevate Labs</h4></p></div>
+                </div>
+            </div>
+            <!-- Tab: Certificates -->
+            <div class="cert-tab-content" id="content-certificates">
+                <div class="modal-card-grid">
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="infosysCEH.jpg" alt="Infosys"></div><h4>INFOSYS</h4></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="ciscoCY.jpg" alt="Cisco"></div><h4>CISCO</h4></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="redhatLX.jpg" alt="Redhat"></div><h4>REDHAT</h4></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="capCY&EH.jpg" alt="Cap"></div><h4>Cappriciosec University</h4></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="ciscoMAI.jpg" alt="Cisco AI"></div><h4>CISCO</h4></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="ciscoNB.jpg" alt="Cisco NB"></div><h4>CISCO</h4></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="capPEN.jpg" alt="Pen"></div><h4>Cappriciosec</h4></p></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="capSE&EH.jpg" alt="SE"></div><h4>Cappriciosec</h4></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="infosysPY.jpg" alt="Infosys Py"></div><h4>INFOSYS</h4></div>
+                
+                </div>
+            </div>
+            <!-- Tab: Participated Certificates -->
+            <div class="cert-tab-content" id="content-participated">
+                <div class="modal-card-grid">
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="ctf7.jpeg" alt="Infosys"></div><h4>CTF7</h4></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="gdgGoogle.jpeg" alt="Infosys"></div><h4>GDG Google CTF</h4><p></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="meta.jpeg" alt="Infosys"></div><h4>Meta CTF</h4></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="kaal.jpeg" alt="Infosys"></div><h4>Kalachkra CTF</h4></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="vishwaCTF.jpg" alt="TATA"></div><h4>Vishwa CTF</h4></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="citHK.jpg" alt="TATA"></div><h4>CIT Hackthon</h4></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="nandhaCTF.jpg" alt="AIG"></div><h4>Nandha CLG CTF</h4></div>                    
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="kictf.jpeg" alt="AIG"></div><h4>Kumaraguru CLG CTF</h4></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="jainCTF.jpg" alt="Deloitte"></div><h4>Jain CLG CTF</h4></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="ksrCTF.jpg" alt="Datacom"></div><h4>KSR CLG CTF</h4></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="mahendraHK.jpg" alt="CB"></div><h4>Mahendra Hackathon</h4></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="mahendraWS.jpg" alt="AIG"></div><h4>Mahendra CLG Workshop</h4></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="muthayamalPPT.jpg" alt="TATA"></div><h4>Muthayamal CLG PPT</h4></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="sumeraCTF.jpg" alt="Telstra"></div><h4>SumeraAi CTF</h4></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="techuniqueWS.png" alt="Deloitte"></div><h4>company Workshop</h4></p></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="tek-zWS.jpg" alt="Datacom"></div><h4>company Workshop</h4></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="vaultofcodeWS.jpg" alt="CB"></div><h4>company Workshop</h4></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="codemyWS.jpg" alt="Telstra"></div><h4>company Workshop</h4></p></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="wintechWS.jpg" alt="AIG"></div><h4>company Workshop</h4></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="forageTATA.jpg" alt="TATA"></div><h4>TATA Consultancy (Forage)</h4></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="forageTELSTRA.jpg" alt="Telstra"></div><h4>Telstra (Forage)</h4></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="forageDELOITTE.jpg" alt="Deloitte"></div><h4>Deloitte (Forage)</h4></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="forageDATACOM.jpg" alt="Datacom"></div><h4>Datacom (Forage)</h4></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="forageCB.jpg" alt="CB"></div><h4>Commonwealth Bank (Forage)</h4></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="forageAIG.jpg" alt="AIG"></div><h4>AIG (Forage)</h4></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="forageCEO.jpg" alt="AIG"></div><h4>AIG (Forage)</h4></div>
+                    <div class="modal-cert-card glass"><div class="image-container"><img src="be10xWS.png" alt="Mastercard"></div><h4>Mastercard (Forage)</h4></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: CTF Write-Ups -->
+    <section class="ctf-writeups" id="ctf-writeups">
+        <h2 class="section-title">CTF WRITE-UPS</h2>
+        <p class="section-subtitle">Documenting the methodology, tools, and learnings from each challenge.</p>
+        <div class="ctf-grid">
+
+            <div class="ctf-card glass">
+                <div class="ctf-card-top">
+                    <span class="ctf-platform thm">TryHackMe</span>
+                    <span class="ctf-category">Web Exploitation</span>
+                </div>
+                <h3 class="ctf-title">Simple CTF</h3>
+                <p class="ctf-desc">Enumerated open services using Nmap, discovered a CMS with a known CVE, and escalated privileges via a misconfigured sudo binary to capture both user and root flags.</p>
+                <div class="ctf-tags">
+                    <span>Nmap</span><span>Gobuster</span><span>CVE Exploit</span><span>Privesc</span>
+                </div>
+                <div class="ctf-footer">
+                    <span class="ctf-diff easy">Easy</span>
+                    <span class="ctf-learned">💡 Linux privesc via sudo misconfiguration</span>
+                </div>
+            </div>
+
+            <div class="ctf-card glass">
+                <div class="ctf-card-top">
+                    <span class="ctf-platform thm">TryHackMe</span>
+                    <span class="ctf-category">Network &amp; Recon</span>
+                </div>
+                <h3 class="ctf-title">RootMe</h3>
+                <p class="ctf-desc">Performed directory brute-forcing with Gobuster to find an upload panel, bypassed file extension filters to upload a PHP reverse shell, and gained root via SUID exploitation.</p>
+                <div class="ctf-tags">
+                    <span>Gobuster</span><span>File Upload Bypass</span><span>SUID</span><span>Reverse Shell</span>
+                </div>
+                <div class="ctf-footer">
+                    <span class="ctf-diff easy">Easy</span>
+                    <span class="ctf-learned">💡 SUID binary abuse for root escalation</span>
+                </div>
+            </div>
+
+            <div class="ctf-card glass">
+                <div class="ctf-card-top">
+                    <span class="ctf-platform htb">HackTheBox</span>
+                    <span class="ctf-category">Linux Box</span>
+                </div>
+                <h3 class="ctf-title">Lame</h3>
+                <p class="ctf-desc">Scanned with Nmap to identify a vulnerable Samba version, leveraged Metasploit to exploit CVE-2007-2447, and obtained a direct root shell without needing privilege escalation.</p>
+                <div class="ctf-tags">
+                    <span>Nmap</span><span>Metasploit</span><span>Samba CVE</span><span>Root Shell</span>
+                </div>
+                <div class="ctf-footer">
+                    <span class="ctf-diff easy">Easy</span>
+                    <span class="ctf-learned">💡 Legacy service vulnerabilities in real environments</span>
+                </div>
+            </div>
+
+            <div class="ctf-card glass">
+                <div class="ctf-card-top">
+                    <span class="ctf-platform pico">PicoCTF</span>
+                    <span class="ctf-category">Cryptography</span>
+                </div>
+                <h3 class="ctf-title">Caesar Cipher</h3>
+                <p class="ctf-desc">Analyzed ciphertext patterns, applied ROT-based brute-force decryption using a Python script to identify the correct shift, and recovered the hidden flag from the encoded message.</p>
+                <div class="ctf-tags">
+                    <span>Python</span><span>Cipher Analysis</span><span>Brute Force</span><span>Encoding</span>
+                </div>
+                <div class="ctf-footer">
+                    <span class="ctf-diff easy">Easy</span>
+                    <span class="ctf-learned">💡 Classical cipher fundamentals and scripting automation</span>
+                </div>
+            </div>
+
+            <div class="ctf-card glass">
+                <div class="ctf-card-top">
+                    <span class="ctf-platform college">College CTF</span>
+                    <span class="ctf-category">OSINT / Forensics</span>
+                </div>
+                <h3 class="ctf-title">KIOT CTF — 2nd Place</h3>
+                <p class="ctf-desc">Competed individually at Knowledge Institute of Technology's CTF event. Solved OSINT, forensics, and web challenges under time pressure, securing 2nd place against multiple competing teams.</p>
+                <div class="ctf-tags">
+                    <span>OSINT</span><span>Forensics</span><span>Web</span><span>Steganography</span>
+                </div>
+                <div class="ctf-footer">
+                    <span class="ctf-diff medium">Medium</span>
+                    <span class="ctf-learned">💡 Real competition mindset &amp; time management</span>
+                </div>
+            </div>
+
+            <div class="ctf-card glass">
+                <div class="ctf-card-top">
+                    <span class="ctf-platform college">College CTF</span>
+                    <span class="ctf-category">Mixed Categories</span>
+                </div>
+                <h3 class="ctf-title">Sona CTF — 3rd Place</h3>
+                <p class="ctf-desc">Participated as part of a team at Sona College of Technology. Collaborated on multiple challenge categories including network, crypto, and web exploitation to achieve a podium finish.</p>
+                <div class="ctf-tags">
+                    <span>Team Work</span><span>Networking</span><span>Crypto</span><span>Web Exploit</span>
+                </div>
+                <div class="ctf-footer">
+                    <span class="ctf-diff medium">Medium</span>
+                    <span class="ctf-learned">💡 Team coordination and parallel challenge solving</span>
+                </div>
+            </div>
+
+        </div>
+        <p class="ctf-placeholder-note">⚠️ Placeholder write-ups — update with your actual CTF details.</p>
+    </section>
+
+    <!-- Section 4: Projects -->
+    <section class="features" id="features">
+        <div class="features-container">
+            <h2 class="section-title">PROJECTS</h2>
+            <div class="diagonal-grid">
+                <div class="feature-row">
+                    <div class="feature-content glass">
+                        <div class="feature-icon">🧠</div>
+                        <h3>ECO Learn</h3>
+                        <p>Eco Learn is an educational initiative designed to promote environmental awareness through simple, practical, and technology-driven learning. It focuses on sustainability, eco-friendly practices, and real-world environmental problem-solving.<br>
+                        <br>Tag: Education • Sustainability • Awareness</p>
+                    </div>
+                    <div class="feature-visual glass">
+                        <a href="https://vtdevildragon1002.github.io/ECO-LEARN/" target="_blank">
+                            <img src="ecolearn.png" alt="Eco Learn">
+                        </a>
+                    </div>
+                </div>
+                <div class="feature-row">
+                    <div class="feature-content glass">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Sign Of Hope</h3>
+                        <p>Sign of Hope is a social-impact project aimed at spreading awareness, motivation, and support through digital platforms. The project focuses on guiding people with positive action, community help, and meaningful communication.<br>
+                        <br>Tag: Social Impact • Awareness • Community</p>
+                    </div>
+                    <div class="feature-visual glass">
+                        <a href="https://vtdevildragon1002.github.io/Sign-of-Hope/" target="_blank">
+                            <img src="signofhope.png" alt="Sign Of Hope">
+                        </a>
+                    </div>
+                </div>
+                <div class="feature-row">
+                    <div class="feature-content glass">
+                        <div class="feature-icon">🌐</div>
+                        <h3>DNC ROX Show</h3>
+                        <p>DNC ROX Show is a movie and entertainment platform featuring user login, language-based filtering, and personalized content recommendations. It is designed to provide a smooth and engaging viewing experience.<br>
+                        <br>Tag: Web App • UI/UX • Entertainment</p>
+                    </div>
+                    <div class="feature-visual glass">
+                        <a href="https://vtdevildragon1002.github.io/DNC-Rox-Show/" target="_blank">
+                            <img src="dncroxshow.png" alt="DNC ROX Show">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Evolution Timeline (Card Flip) -->
+    <section class="timeline" id="timeline">
+        <h2 class="section-title">EVOLUTION TIMELINE</h2>
+        <p class="section-subtitle">Click any card to reveal the story.</p>
+        <div class="flip-timeline">
+
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-inner">
+                    <div class="flip-front glass">
+                        <div class="flip-year">2026</div>
+                        <div class="flip-icon">🚀</div>
+                        <div class="flip-teaser">New Chapter</div>
+                        <div class="flip-hint">tap to reveal</div>
+                    </div>
+                    <div class="flip-back glass">
+                        <div class="flip-year-sm">2026</div>
+                        <h4>Growth &amp; Impact</h4>
+                        <p>2026 marks a new phase focused on growth, consistency, and real-world impact. Building deeper skills, contributing to security communities, and moving forward with purpose and discipline.</p>
+                        <div class="flip-tags"><span>CTF Competitions</span><span>Deeper Skills</span><span>Community</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-inner">
+                    <div class="flip-front glass">
+                        <div class="flip-year">2025</div>
+                        <div class="flip-icon">🏴</div>
+                        <div class="flip-teaser">CTF Player</div>
+                        <div class="flip-hint">tap to reveal</div>
+                    </div>
+                    <div class="flip-back glass">
+                        <div class="flip-year-sm">2025</div>
+                        <h4>Capture The Flag</h4>
+                        <p>Began competing in CTF events — winning 2nd place at KIOT, 2nd at Sri Shanmugha, and 3rd at Sona College. Joined TryHackMe and HackTheBox to sharpen practical hacking skills through hands-on labs.</p>
+                        <div class="flip-tags"><span>TryHackMe</span><span>HackTheBox</span><span>CTF Wins</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-inner">
+                    <div class="flip-front glass">
+                        <div class="flip-year">2024</div>
+                        <div class="flip-icon">🎓</div>
+                        <div class="flip-teaser">College Entry</div>
+                        <div class="flip-hint">tap to reveal</div>
+                    </div>
+                    <div class="flip-back glass">
+                        <div class="flip-year-sm">2024</div>
+                        <h4>Cybersecurity Student</h4>
+                        <p>Completed 12th standard and enrolled as a Cybersecurity Engineering student. Formally entered the security domain, earning certifications from INFOSYS, CISCO, REDHAT, and completing multiple Forage simulations.</p>
+                        <div class="flip-tags"><span>CISCO</span><span>REDHAT</span><span>INFOSYS</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-inner">
+                    <div class="flip-front glass">
+                        <div class="flip-year">2022</div>
+                        <div class="flip-icon">💡</div>
+                        <div class="flip-teaser">The Spark</div>
+                        <div class="flip-hint">tap to reveal</div>
+                    </div>
+                    <div class="flip-back glass">
+                        <div class="flip-year-sm">2022</div>
+                        <h4>Foundation &amp; Curiosity</h4>
+                        <p>Successfully completed 10th standard. This stage built a strong academic foundation and ignited a deep curiosity in computers, technology, and how digital systems could be understood and secured.</p>
+                        <div class="flip-tags"><span>Foundation</span><span>Curiosity</span><span>Technology</span></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 6: Contact -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-info glass">
+                <h3>ESTABLISH CONNECTION</h3>
+                <p>Connect with me across my professional and learning platforms. I actively share my cybersecurity journey, projects, and hands-on learning through Instagram, LinkedIn, GitHub, TryHackMe, and Hack The Box. Feel free to reach out, explore my work, or contact me directly.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/vt_ethical_dragon/" target="_blank" class="glass" title="Instagram">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5"/>
+                            <circle cx="12" cy="12" r="4"/>
+                            <circle cx="17.5" cy="6.5" r="0.5"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/VTDevilDragon1002" target="_blank" class="glass" title="GitHub">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.2.8-.5v-1.8c-3.3.7-4-1.6-4-1.6-.5-1.2-1.3-1.6-1.3-1.6-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.4 1.2-3.3-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.9 1.2 2 1.2 3.3 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5A12 12 0 0 0 12 .5z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/vishal-t-8b2863377/" target="_blank" class="glass" title="LinkedIn">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M4.98 3.5A2.48 2.48 0 1 0 5 8.46a2.48 2.48 0 0 0-.02-4.96zM3 21h4V9H3zm7 0h4v-6c0-1.6.3-3.1 2.3-3.1 2 0 2 1.9 2 3.2V21h4v-6.7c0-4.1-2.2-6-5.2-6-2.4 0-3.5 1.3-4 2.2V9h-4z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/VTDevilDragon/" target="_blank" class="glass" title="Facebook">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M22 12a10 10 0 1 0-11.6 9.9v-7H8v-3h2.4V9.5c0-2.4 1.4-3.7 3.6-3.7 1 0 2 .2 2 .2v2.2h-1.1c-1.1 0-1.4.7-1.4 1.4V12H16l-.4 3h-2.1v7A10 10 0 0 0 22 12z"/>
+                        </svg>
+                    </a>
+                    <a href="https://tryhackme.com/p/vishaldcp614" target="_blank" class="glass" title="TryHackMe">
+                        <img src="https://assets.tryhackme.com/img/favicon.png" alt="TryHackMe" width="22" height="22" class="blue-icon">
+                    </a>
+                    <a href="https://app.hackthebox.com/profile/your_id" target="_blank" class="glass" title="Hack The Box">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M3 7l9-5 9 5v10l-9 5-9-5V7zm9-2.3L5 8l7 3.9L19 8l-7-3.3zM5 9.8v6.4l6 3.3v-6.4L5 9.8zm14 0l-6 3.3v6.4l6-3.3V9.8z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contact Form with Web3Forms -->
+            <form id="contact-form" class="contact-form glass">
+                <input type="hidden" name="access_key" value="e4066e86-e6eb-4e68-bfc0-0a4642c215d8">
+                <input type="hidden" name="subject" value="New message from VT Portfolio">
+                <input type="checkbox" name="botcheck" style="display:none;">
+
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="subject_field" placeholder="Subject" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">TRANSMIT TO MATRIX</button>
+                <p id="form-status" class="form-status"></p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Fullscreen Image Viewer -->
+    <div class="image-viewer" id="imageViewer">
+        <span class="close-viewer" onclick="closeViewer()">&#x2715;</span>
+        <img id="viewerImage" src="" alt="Full View">
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#showcase">Achievements</a>
+                <a href="#ctf-writeups">CTF Write-Ups</a>
+                <a href="#features">Projects</a>
+                <a href="#timeline">Evolution</a>
+                <a href="https://github.com/VTDevilDragon1002" target="_blank" rel="noopener">GitHub</a>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2025 Vishal T &mdash; VT Ethical Dragon</p>
+            </div>
+            <div class="footer-design">
+                Design: <a href="https://github.com/VTDevilDragon1002" target="_blank" rel="nofollow noopener">Vishal T</a> | VT Ethical Dragon |
+                <a href="https://github.com/VTDevilDragon1002">Projects</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="vtportfolio.js"></script>
+    <script>
+    function openCertModal(tab) {
+        document.getElementById('certModal').classList.add('open');
+        document.body.style.overflow = 'hidden';
+        switchTab(tab || 'achievements');
+    }
+    function closeCertModal(e) {
+        if (e === null || e.target === document.getElementById('certModal')) {
+            document.getElementById('certModal').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+    }
+    function switchTab(name) {
+        document.querySelectorAll('.cert-tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.cert-tab-content').forEach(c => c.classList.remove('active'));
+        document.getElementById('tab-' + name).classList.add('active');
+        document.getElementById('content-' + name).classList.add('active');
+    }
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeCertModal(null);
+    });
+    </script>
+
+</body>
+</html>
