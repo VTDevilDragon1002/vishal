@@ -86,7 +86,7 @@
 
     <!-- Section 1: Hero -->
     <section class="hero" id="home">
-        <div class="profile-photo glass">
+        <div class="profile-photo glass" onclick="startBgm()" style="cursor:pointer;" title="Click to play BGM">
             <img src="vtddphoto.jpg" alt="Vishal T Profile Photo">
         </div>
         <div class="hero-content">
@@ -619,6 +619,22 @@
         if (e.key === 'Escape') closeCertModal(null);
     });
     </script>
+<!-- BGM Audio -->
+<audio id="bgm" src="bgm.mp3" loop preload="auto"></audio>
+
+<script>
+const bgm = document.getElementById('bgm');
+
+function startBgm() {
+  bgm.volume = 0.5;
+  if (bgm.paused) {
+    bgm.play().catch(() => {});
+  } else {
+    bgm.pause();
+  }
+}
+</script>
+    
 
 </body>
 </html>
