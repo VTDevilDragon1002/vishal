@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>DR4G0N_ACCESS :: Terminal</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: #050b12;
+    color: #00ffc8;
+    font-family: 'Share Tech Mono', monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-image:
+      radial-gradient(circle at 20% 20%, rgba(0,255,200,0.05), transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(0,150,255,0.06), transparent 40%);
+  }
+
+  .terminal {
+    width: 620px;
+    max-width: 92vw;
+    background: #071019;
+    border: 1px solid #0ff3;
+    border-radius: 8px;
+    box-shadow: 0 0 25px rgba(0,255,200,0.25), inset 0 0 40px rgba(0,255,200,0.03);
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .titlebar {
+    background: #0b1a24;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid #0ff2;
+  }
+
+  .dot { width: 11px; height: 11px; border-radius: 50%; }
+  .dot.red { background: #ff5f56; }
+  .dot.yellow { background: #ffbd2e; }
+  .dot.green { background: #27c93f; }
+  .titlebar span.label {
+    margin-left: 10px;
+    color: #5fe8d0;
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+
+  .screen {
+    padding: 26px 28px 30px;
+    min-height: 320px;
+  }
+
+  .line { margin-bottom: 10px; line-height: 1.5; }
+  .prompt-tag { color: #ff3d8b; }
+  .sys { color: #7fffd4; }
+  .dim { color: #4d7d75; }
+  .warn { color: #ffb347; }
+  .err { color: #ff5f56; }
+
+  .blink { animation: blink 1s step-end infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .input-row {
+    display: flex;
+    align-items: center;
+    margin-top: 18px;
+    border-top: 1px dashed #0ff2;
+    padding-top: 16px;
+  }
+
+  .input-row span.arrow { color: #ff3d8b; margin-right: 8px; }
+
+  input[type="text"] {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #00ffc8;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 15px;
+    caret-color: #00ffc8;
+  }
+
+  button {
+    background: #0ff2;
+    border: 1px solid #0ff8;
+    color: #00ffc8;
+    font-family: 'Share Tech Mono', monospace;
+    padding: 6px 16px;
+    margin-left: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.2s;
+    letter-spacing: 1px;
+  }
+  button:hover { background: #0ff4; }
+
+  .feedback { margin-top: 12px; min-height: 20px; font-size: 14px; }
+
+  .flag-box {
+    margin-top: 22px;
+    padding: 18px;
+    border: 1px solid #27c93f88;
+    background: #0a1a12;
+    border-radius: 6px;
+    text-align: center;
+    display: none;
+  }
+
+  .flag-box.show { display: block; }
+
+  .flag-text {
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #7CFC00;
+    text-shadow: 0 0 8px #27c93f88;
+    word-break: break-all;
+  }
+
+  .progress {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 18px;
+  }
+  .seg {
+    flex: 1;
+    height: 4px;
+    background: #123;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .seg.done { background: #00ffc8; box-shadow: 0 0 6px #00ffc8; }
+
+  .hint { color: #4d7d75; font-size: 12px; margin-top: 6px; }
+</style>
+</head>
+<body>
+
+<div class="terminal">
+  <div class="titlebar">
+    <div class="dot red"></div>
+    <div class="dot yellow"></div>
+    <div class="dot green"></div>
+    <span class="label">root@dr4g0n-house: /ctf/access_control</span>
+  </div>
+
+  <div class="screen">
+    <div class="progress">
+      <div class="seg" id="seg1"></div>
+      <div class="seg" id="seg2"></div>
+    </div>
+
+    <div class="line" id="questionLine">
+      <span class="prompt-tag">[Q1]</span> In what year was <b>Mahendra Engineering College</b> established?
+    </div>
+
+    <div class="input-row">
+      <span class="arrow">></span>
+      <input type="text" id="answerInput" autocomplete="off" placeholder="type your answer..." />
+      <button id="submitBtn">ENTER</button>
+    </div>
+
+    <div class="feedback" id="feedback"></div>
+
+    <div class="flag-box" id="flagBox">
+      <div class="dim" style="margin-bottom:8px;">[ACCESS GRANTED] Decrypting flag...</div>
+      <div class="flag-text" id="flagText"></div>
+      <div class="hint" style="margin-top:10px;">Welcome home, VT Dr4g0n. 🐉</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const questions = [
+    {
+      text: 'In what year was <b>Mahendra Engineering College</b> established?',
+      answer: '1995',
+      seg: 'seg1'
+    },
+    {
+      text: 'In what year was the <b>Cybersecurity Department</b> at Mahendra Engineering College established?',
+      answer: '2020',
+      seg: 'seg2'
+    }
+  ];
+
+  // Flag is never stored as plain text in source. It is assembled from
+  // character codes split across both verification stages, only combined
+  // in memory after both answers are confirmed correct.
+  const P1 = [66,82,69,65,67,72,123,73,84,39,83,95];
+  const P2 = [68,82,52,71,48,78,95,72,79,85,83,69,125];
+  function getFlag() {
+    return String.fromCharCode(...P1, ...P2);
+  }
+
+  let step = 0;
+
+  const questionLine = document.getElementById('questionLine');
+  const input = document.getElementById('answerInput');
+  const btn = document.getElementById('submitBtn');
+  const feedback = document.getElementById('feedback');
+  const flagBox = document.getElementById('flagBox');
+  const flagText = document.getElementById('flagText');
+  const inputRow = document.querySelector('.input-row');
+
+  function normalize(str) {
+    return str.trim().toLowerCase().replace(/[^0-9a-z]/g, '');
+  }
+
+  function renderQuestion() {
+    const q = questions[step];
+    questionLine.innerHTML = `<span class="prompt-tag">[Q${step + 1}]</span> ${q.text}`;
+  }
+
+  function checkAnswer() {
+    const q = questions[step];
+    const val = normalize(input.value);
+
+    if (val === '') {
+      feedback.innerHTML = '<span class="warn">[WARN] Empty input rejected.</span>';
+      return;
+    }
+
+    if (val === q.answer) {
+      document.getElementById(q.seg).classList.add('done');
+      feedback.innerHTML = `<span class="sys">[ACCEPTED] Verification ${step + 1}/2 passed.</span>`;
+      step++;
+      input.value = '';
+
+      if (step < questions.length) {
+        setTimeout(() => {
+          feedback.innerHTML = '';
+          renderQuestion();
+        }, 700);
+      } else {
+        setTimeout(unlockFlag, 700);
+      }
+    } else {
+      feedback.innerHTML = '<span class="err">[DENIED] Incorrect value. Access log updated.</span>';
+      input.value = '';
+    }
+  }
+
+  function unlockFlag() {
+    questionLine.innerHTML = '<span class="sys">[SYSTEM] All checks passed. Compiling credentials...</span>';
+    inputRow.style.display = 'none';
+    feedback.innerHTML = '';
+    flagBox.classList.add('show');
+
+    let i = 0;
+    const target = getFlag();
+    flagText.textContent = '';
+    const interval = setInterval(() => {
+      flagText.textContent = target.slice(0, i) + (i < target.length ? '▌' : '');
+      i++;
+      if (i > target.length) clearInterval(interval);
+    }, 45);
+  }
+
+  btn.addEventListener('click', checkAnswer);
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') checkAnswer();
+  });
+
+  renderQuestion();
+  input.focus();
+</script>
+
+</body>
+</html>
